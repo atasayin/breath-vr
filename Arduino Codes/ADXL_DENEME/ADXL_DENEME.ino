@@ -122,16 +122,12 @@ void ExpoMovAvg(){
   int cur_sample=0;
   double cur_avg=0.0;
   cur_sample= analogRead(zpin);
-  cur_avg= (cur_sample*alpha) + ((lastAvg)*(1-alpha)) ;
+ 
+  cur_avg = (cur_sample*alpha) + ((lastAvg)*(1-alpha)) ;
   //Serial.print(cur_avg);
-  lastAvg=cur_avg;
+  lastAvg = cur_avg;
  // Serial.println(cur_sample);
-  
-  Serial.print("cur_sample:");
-  Serial.println(cur_sample);
-  Serial.print(", ");
-  Serial.print("cur_avg:");
-  //Serial.print(analogRead(zpin));
+ 
   Serial.println(cur_avg);
   lastAvg=cur_avg;
   
@@ -150,13 +146,14 @@ void loop() {
   lastAvg=cur_avg;
  // Serial.println(cur_sample);
   
-  Serial.print("cur_sample:");
-  Serial.println(cur_sample);
-  Serial.print(", ");
-  Serial.print("cur_avg:");
+  
+  //Serial.print("cur_sample:");
+  //Serial.println(cur_sample);
+  //Serial.print(", ");
+  //Serial.print("cur_avg:");
   //Serial.print(analogRead(zpin));
   Serial.println(cur_avg);
-  lastAvg=cur_avg;
+  lastAvg = cur_avg;
   /*
   Serial.print("AnalogIn:");
   Serial.println(sensorVal);
